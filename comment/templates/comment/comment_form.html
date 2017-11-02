@@ -1,0 +1,21 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<title>Сообщение администратору</title>
+    <link rel="stylesheet" href="{% static 'comment/css/form.css' %}">
+</head>
+<body>
+    <div id="result"> {{ status }}</div>
+    <form method="post" action="send">{% csrf_token %}
+        <label for="email">Эл. почта</label>
+        <input type="email" name="email">
+        <label for="message">Сообщение</label>
+        <input type="text" name="message">
+        <input type="submit" value="Отправить">
+
+    </form>
+     <a href="/signout">Выйти</a>
+</body>
+</html>

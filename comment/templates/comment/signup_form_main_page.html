@@ -1,0 +1,26 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<title>Recall</title>
+    <link rel="stylesheet" href="{% static 'comment/css/form.css' %}">
+</head>
+<body>
+    <div id="error-signup"></div>
+    <form method="post" id="signup">{% csrf_token %}
+        <label for="email">Email:</label>
+        <input type="email" name="email">
+        <label for="username">Логин:</label>
+        <input type="username" name="username">
+        <label for="password">Пароль:</label>
+        <input type="password" name="password">
+        <input type="submit" value="Регистрация" id="confirm_signup">
+    </form>
+    <a href="/">Аккаунт уже есть</a>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="{% static 'comment/js/sign.js' %}"></script>
+</body>
+</html>
+
